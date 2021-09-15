@@ -3,6 +3,7 @@
 ### Technical Requirements
 
 Appraisal Features:
+
 •	Sales Price
 
 •	Bedrooms
@@ -24,6 +25,7 @@ Appraisal Features:
 •	Easements (Y/N)
 
 ### Contracts:
+
 -Deed contract
 
 Function: To store variables above and contain proof of ownership (current & historic)
