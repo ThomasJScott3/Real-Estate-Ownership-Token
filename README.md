@@ -47,4 +47,5 @@ Solidity Contracts:
 -End Auction
 
 -Highest Bidder (already in logic)
-
+## Contract Address
+## Transaction Hash
