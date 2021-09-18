@@ -1,4 +1,4 @@
-pragma solidity 0.8.7;
+pragma solidity ^0.5.0;
 
 contract HousingAuction {
     address deployer; // Us, the protocol.
