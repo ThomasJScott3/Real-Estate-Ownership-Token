@@ -48,11 +48,10 @@ constructor(string memory name, string memory symbol) public {} // might be able
    }
    
   function newAppraisal(uint token_id, uint new_value, string memory report_uri, uint bedrooms, uint bathrooms, uint square_feet) public returns(uint) {
-    project_overlord[token_id].appraisal_value = new_value;
+    project_overlord[token_id].appraisal_value += 1; // Push fixed mistake into GitHub (adding appraisal_value instead of setting all further additions as new_value)
     
-    // PaseError: Expected ',' but got identifier => Translation: No identifier values(uint, string)
     emit HouseforSale(token_id, new_value, report_uri, bedrooms, bathrooms, square_feet);
     
-    return project_overlord[token_id].appraisal_value;
+    return project_overlord[token_id].appraisal_value; 
   }
 }
