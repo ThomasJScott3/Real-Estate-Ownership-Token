@@ -11,7 +11,10 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/drafts/Counters.sol";
 
 contract Prototype is ERC721Full {
-constructor(string memory name, string memory symbol) public {} // might be able to mint in here but I'm not 100% sure, will look further into this.
+
+    constructor() 
+    // Variables that need to be initialized
+    ERC721Full("french_house", "FRNC") public {} 
 
     using Counters for Counters.Counter;
     Counters.Counter token_ids;
@@ -27,8 +30,8 @@ constructor(string memory name, string memory symbol) public {} // might be able
         uint bathrooms;
         uint square_feet;
     }
-
-  mapping(uint => House) public project_overlord; // project_overlord can be thought of as a broker with a specific collection of houses/NFTs that we'd add based on this code
+  // project_overlord can be thought of as a broker with a specific collection of houses/NFTs that we'd add based on this code
+  mapping(uint => House) public project_overlord; 
 
   // event HouseforSale is already posted above so I'm not writing it out again.
   event HouseforSale(uint token_id, uint appraisal_value, string report_uri, uint bedrooms, uint bathrooms, uint square_feet);
@@ -40,6 +43,7 @@ constructor(string memory name, string memory symbol) public {} // might be able
         uint token_id = token_ids.current();
 
         _mint(owner, token_id); // This is from ERC721Full.sol. However, take note that it's from ERC721Enumerable.sol, a parent contract of ERC721Full.sol
+        // To set the token_uri after the contract is deployed: ipfs://whatever_the_CIDV1_is_from_cid.ipfs.io
         _setTokenURI(token_id, token_uri);
 
         project_overlord[token_id] = House(name, yearBuilt, appraisal_value, initial_value, homeBuilder, bedrooms, bathrooms, square_feet);
