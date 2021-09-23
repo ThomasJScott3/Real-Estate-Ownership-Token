@@ -62,12 +62,4 @@ contract Prototype is ERC721Full {
     
     return project_overlord[token_id].appraisal_value; 
   }
-  
-  function reportBreakIn(uint token_id, string memory report_uri) public returns(uint) {
-    houses[token_id].breakIns += 1;
-    
-    emit breakIn(token_id, report_uri); 
-    
-    return houses[token_id].breakIns; // Code deployed with the new function
-  }
 }
