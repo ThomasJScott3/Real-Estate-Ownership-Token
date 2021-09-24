@@ -8,63 +8,54 @@ import "./HousingAuction.sol";
 
 contract HousingMarket is ERC721Full, Ownable {
 
-    constructor() 
-    // Still need to understand calling functions & mappings better into child contract
-    ERC721Full("HousingMarket", "REFT") public {} // Vars called on: (string memory name, string memory symbol)
-    Ownable(owner) public {} // Vars called on: (address private owner, function isOwner*?)
-
-    using Counters for Counters.Counter; // counter 
+    constructor() ERC721Full("RealEstateMarket", "REIT") public {}
+    // Gives the properties available
+    using Counters for Counters.Counter;
     Counters.Counter token_ids;
-    
-    address payable foundation_address = msg.sender;
-    
+    // Owner 
+    address payable owner_address = msg.sender;
+
     mapping(uint => HousingAuction) public auctions;
-    
-    modifier landRegistered(uint token_id) {
+
+    modifier houseRegistered(uint token_id) {
         require(_exists(token_id));
         _;
     }
-    
-    function createAuction(uint token_id) public onlyOwner {
-        auctions[token_id] = new HousingAuction();
+    // This function will give us a perpetual creation of auctions when our protocol(project_overlord) puts a home up for sale.
+    function createAuction(uint token_id) public onlyOwner { // This information will be on chain.
+        auctions[token_id] = new HousingAuction(owner_address);
     }
 
-    function registerLand(string memory uri) public onlyOwner {
+    function registerLand(string memory uri) public payable onlyOwner { // Owner signature could apply here 
         token_ids.increment();
         uint token_id = token_ids.current();
-        
-        _mint(foundation_address, token_id);
-        
+        _mint(owner_address, token_id);
         _setTokenURI(token_id, uri);
-        
         createAuction(token_id);
-        
     }
-
-    function endAuction(uint token_id) public onlyOwner landRegistered(token_id) {
-        HousingAuction auction = auctions[token_id]; 
-        
+    // Makes a call to the auction contract, instructing the contract to end the auction.
+    function endAuction(uint token_id) public onlyOwner houseRegistered(token_id) {
+        HousingAuction auction = auctions[token_id];
         auction.auctionEnd();
-        
-        safeTransferFrom(owner(), auction.highestBidder(), token_id);
+        safeTransferFrom(owner(), auction.highestBidder(), token_id); // Previous owner sending property to the new owner
     }
 
     function auctionEnded(uint token_id) public view returns(bool) {
-        HousingAuction auction = auctions[token_id]; 
+        HousingAuction auction = auctions[token_id];
         return auction.ended();
     }
 
-    function highestBid(uint token_id) public view landRegistered(token_id) returns(uint) {
+    function highestBid(uint token_id) public view houseRegistered(token_id) returns(uint) {
         HousingAuction auction = auctions[token_id];
         return auction.highestBid();
     }
 
-    function pendingReturn(uint token_id, address sender) public view landRegistered(token_id) returns(uint) {
-        HousingAuction auction = auctions[token_id]; // Looking up the auction of interest brought into the function
-        return auction.pendingReturn(sender); // Here we call the function that we looked up
+    function pendingReturn(uint token_id, address sender) public view houseRegistered(token_id) returns(uint) {
+        HousingAuction auction = auctions[token_id];
+        return auction.pendingReturn(sender);
     }
-
-    function bid(uint token_id) public payable landRegistered(token_id) {
+    // houseRegistered(token_id) will enable the function to see if the bid is for a valid house that's been registered.
+    function bid(uint token_id) public payable houseRegistered(token_id) {
         HousingAuction auction = auctions[token_id];
         auction.bid.value(msg.value)(msg.sender);
     }
