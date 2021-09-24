@@ -1,8 +1,8 @@
 # Real-Estate-Ownership-Token
 
-### Technical Requirements
+## Technical Requirements
 
-Appraisal Features:
+### Some of the appraisal features:
 
 •	Sales Price
 
@@ -14,38 +14,12 @@ Appraisal Features:
 
 •	Year constructed
 
-•	Garage (Y/N)
-
-•	County
-
-•	State
-
-•	Lot #
-
-•	Easements (Y/N)
-
 ### Contracts:
-
--Deed contract
-
 Function: To store variables above and contain proof of ownership (current & historic)
 
 Solidity Contracts:
+HouseAuction.sol, this contract has been written to serve the purpose of creating the auction process as well as the potential threat of a Reentrancy attack.
 
--Ownable.sol
+PrototypeNFT.sol, this contract was intended to serve as a first model to design our project after for the product/service that would launch to market.
 
--RegisterLand.sol
-
-### Other features:
-
--Auction time limit
-
--Bidding
-
--Initiate Auction
-
--End Auction
-
--Highest Bidder (already in logic)
-## Contract Address
-## Transaction Hash
+HousingMarket.sol, this contract enables automation of the process to sell homes for the protocol.

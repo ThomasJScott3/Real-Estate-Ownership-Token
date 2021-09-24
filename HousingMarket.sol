@@ -4,8 +4,6 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/ownership/Ownable.sol"; // This will maintain ownership
 import "./HousingAuction.sol";
 
-// Wouldn't there need to be a mint?
-
 contract HousingMarket is ERC721Full, Ownable {
 
     constructor() ERC721Full("RealEstateMarket", "REIT") public {}
@@ -33,6 +31,7 @@ contract HousingMarket is ERC721Full, Ownable {
         _setTokenURI(token_id, uri);
         createAuction(token_id);
     }
+    
     // Makes a call to the auction contract, instructing the contract to end the auction.
     function endAuction(uint token_id) public onlyOwner houseRegistered(token_id) {
         HousingAuction auction = auctions[token_id];
