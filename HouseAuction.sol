@@ -73,7 +73,7 @@ contract HousingAuction {
         emit AuctionEnded(highestBidder, highestBid);
         pendingReturns[highestBidder] = pendingReturns[highestBidder] - (highestBid); 
         // 3. Interaction
-        buyer.transfer(highestBid); // TypeError says that "send" and "transfer" are only available for objects of type "address payable", not "address".
+        buyer.transfer(highestBid); 
     }
 }
 
