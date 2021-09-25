@@ -33,7 +33,8 @@ Function pendingReturns: Gives the ability to check an address as the input and 
 ### HousingMarket.sol
 
 Function createAuction: Automates the process to offer a listing, compared to the Prototype.sol that required a contract to create an individual listing. With this function, we’re able to deploy our listings from this contract, thus saving time and costs on transaction fees.
-Function endAuction: Putting an end to any offers for the listing. As well as, initiate the payment from the highest bidder since the end will signal the transaction to switch the ownership of capital and title.
+
+Function endAuction: Putting an end to any offers for the listing; as well as initiating the payment from the highest bidder. This is because the end will signal the transaction to switch the ownership of capital and title.
 
 
 Function bid: Allows a bid with the ability to check through a modifier, houseRegistered, that will enable the function to see if the bid is for a valid house that's been registered.  
@@ -48,12 +49,15 @@ Struct House: Acts as a record with different features of the house added to rep
 ### Testing
 
 
-Tools: Testing was conducted using test tools: Ganache, Remix and MetaMask.  Specifically, testing was done to ensure that each contract module is vetted for authorization and access control mechanisms. 
+Tools: Testing was conducted using the following test tools - Ganache, Remix and MetaMask.  Specifically, testing was done to ensure that each contract module is vetted for authorization and access control mechanisms. 
 
 
-Functions Tested: Contract status when posted on testnet sites, token ownership, approve action to transfer, and validate token transfer.   
-Reentrancy: One feature that this code has is the ability to test a reentrancy attack. Reentrancy works by repeatedly drawing from the balance of a contract using a backdoor. This happens when the contract lacks an update on the accounting within it which updates where user funds are. Instead of sealing this hole, we decided to leave it open. Our reasoning is that allowing end-users to test security would allow future contributors to better innovate down the line. 
+Functions Tested: Contract status when posted on testnet sites where the following steps were taken - token ownership, approve action to transfer, and validate token transfer.   
+
+
+Reentrancy: One feature that this code has is the ability to test a reentrancy attack. Reentrancy works by repeatedly drawing from the balance of a contract using a backdoor. This happens when the contract lacks an update on the accounting within it which updates where users' funds are. Instead of sealing this hole, we decided to leave it open. Our reasoning is that allowing end-users to test our code's security will allow future contributors to better innovate down the line. 
 
 ### Conclusion
 
-In conclusion, this token is a major step towards advancing the state of the art for real estate transactions. One area that was unforeseen at the outset was the ability to host images of the actual house on IPFS (interplanetary file system). Not only did this allow our listings to be protected from malicious actors pretending to sell our property, by not allowing a copy of the same image uploaded onto IPFS, but a new hash will be generated when any of our clients make a change to their house and require us to update the pictures with a new version. In this vein, the path is now open to address possible issues of title theft. Title theft takes place when a malicious actor [fraudulently transfers a property’s deed from the legal owner to another person](https://www.experian.com/blogs/ask-experian/what-is-home-title-fraud/). The malicious actor can then refinance a mortgage, cash out the legal owner’s equity and walk away with the proceeds. By hashing these transactions, we have taken a crucial first step in countering this alarming trend and securing real estate transactions with the tremendous power of blockchain.
+In conclusion, this token is a major step towards advancing the state of the art for real estate transactions. One area that was unforeseen at the outset was the ability to host images of the actual house, one of which we also displayed above, on IPFS (interplanetary file system). Not only did this allow our listings to be protected from malicious actors pretending to sell our property, by not allowing a copy of the same image uploaded onto IPFS, but a new hash will be generated when any of our clients make a change to their house and require us to update the pictures with a new version. 
+In this vein, the path is now open to address possible issues of title theft. Title theft takes place when a malicious actor [fraudulently transfers a property’s deed from the legal owner to another person](https://www.experian.com/blogs/ask-experian/what-is-home-title-fraud/). The malicious actor can then refinance a mortgage, cash out the legal owner’s equity and walk away with the proceeds. By introducing hashing, we have taken a crucial first step in countering this alarming trend and securing real estate transactions with the tremendous power of blockchain.
