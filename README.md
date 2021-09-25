@@ -2,9 +2,10 @@
 
 Collaborators: Yonathan Eshetu, Marjorie Lawrence & Thomas Scott
 
-[!Presentation Link](https://github.com/ThomasJScott3/Real-Estate-Ownership-Token/blob/main/Real%20Estate%20Token%20Presentation.pdf)
+[Presentation Link](https://github.com/ThomasJScott3/Real-Estate-Ownership-Token/blob/main/Real%20Estate%20Token%20Presentation.pdf)
 
 Summary: 
+
 The image you see above may appear to the untrained observer to be simply a picture of a house. However, it is actually a non-fungible token or NFT for short. Although this one is simply a test, future iterations of this token could potentially represent title to actual real property one day. 
 
 The inspiration for this project came from Thomas’ background in real estate lending. A major part of that background was working with title companies, usually in the context of a secured transaction. That is to say financing the purchase of an asset, wherein the asset itself is collateral in the event of a default. In such cases, title agencies perform the vital work of ensuring that there is a clear chain of title. In order for there to be a clear title, all liens of record have to be cleared. This must be done by the time the new owner closes on the property and the change in ownership is recorded by the county clerk. 
@@ -12,6 +13,7 @@ The inspiration for this project came from Thomas’ background in real estate l
 That’s where our project comes in: dubbed ‘Operation Overlord’ in honor of the D-Day landings, it was an attempt to digitize a cumbersome process and reduce the financial burden on anyone attempting to purchase real property. The fictitious blurb below was disseminated to classmates as part of the project recruitment process.
 
 Prompt: 
+
 You have just been hired as a software developer at Euclid Title (see the logo above). The company, which was named for the landmark case Euclid v. Ambler Realty Co.; processes real estate transactions by ensuring that there is ‘clear title’ on properties being bought and sold. This means that there are no liens on the property and that there are no covenants, easements or other restrictions that could disrupt the orderly transfer of real property from one party to another. Your mission, should you choose to accept it, is to spearhead Project Overlord. This is one of Euclid Title’s most guarded development secrets. It involves grafting or otherwise imparting property details to NFTs (non-fungible tokens) and exchanging them through smart contracts as a precursor to replacing traditional title transactions all together. In addition, such NFTs will be transacted on a TestNet similar to that which has been demonstrated in class.
 
 Project Code: 
@@ -41,7 +43,7 @@ Function bid: Allows a bid with the ability to check through a modifier, houseRe
 Function newAppraisal: Allows a new value to be assigned to a property listed through our protocol.
 
 
-Struct House: Acts as a record with different features of the house added to represent information we’d like potential buyers to have access to. The variables for this were partially adapted from the standard [!Uniform Residential Appraisal Report form promulgated by Fannie Mae] (https://singlefamily.fanniemae.com/media/12371/display).
+Struct House: Acts as a record with different features of the house added to represent information we’d like potential buyers to have access to. The variables for this were partially adapted from the standard [Uniform Residential Appraisal Report form promulgated by Fannie Mae](https://singlefamily.fanniemae.com/media/12371/display).
 
 ### Testing
 
@@ -54,4 +56,4 @@ Reentrancy: One feature that this code has is the ability to test a reentrancy a
 
 ### Conclusion
 
-In conclusion, this token is a major step towards advancing the state of the art for real estate transactions. One area that was unforeseen at the outset was the ability to host images of the actual house on IPFS (interplanetary file system). Not only did this allow our listings to be protected from malicious actors pretending to sell our property, by not allowing a copy of the same image uploaded onto IPFS, but a new hash will be generated when any of our clients make a change to their house and require us to update the pictures with a new version. In this vein, the path is now open to address possible issues of title theft. Title theft takes place when a malicious actor fraudulently transfers a property’s deed to another person (usually their own). The malicious actor can then refinance a mortgage, cash out the legal owner’s equity and [!walk away with the proceeds] (https://www.experian.com/blogs/ask-experian/what-is-home-title-fraud/). By hashing these transactions, we have taken a crucial first step in countering this alarming trend and securing real estate transactions with the tremendous power of blockchain.
+In conclusion, this token is a major step towards advancing the state of the art for real estate transactions. One area that was unforeseen at the outset was the ability to host images of the actual house on IPFS (interplanetary file system). Not only did this allow our listings to be protected from malicious actors pretending to sell our property, by not allowing a copy of the same image uploaded onto IPFS, but a new hash will be generated when any of our clients make a change to their house and require us to update the pictures with a new version. In this vein, the path is now open to address possible issues of title theft. Title theft takes place when a malicious actor [fraudulently transfers a property’s deed from the legal owner to another person](https://www.experian.com/blogs/ask-experian/what-is-home-title-fraud/). The malicious actor can then refinance a mortgage, cash out the legal owner’s equity and walk away with the proceeds. By hashing these transactions, we have taken a crucial first step in countering this alarming trend and securing real estate transactions with the tremendous power of blockchain.
