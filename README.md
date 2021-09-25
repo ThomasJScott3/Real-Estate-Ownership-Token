@@ -10,7 +10,7 @@ Collaborators: Yonathan Eshetu, Marjorie Lawrence & Thomas Scott
 
 Summary: 
 
-The image you see above may appear to the untrained observer to be simply a picture of a house. However, it is actually a non-fungible token or NFT for short. Although this one is simply a test, future iterations of this token could potentially represent title to actual real property one day. 
+The image you see above may appear, to the untrained observer, to be simply a picture of a house. However, it is actually a non-fungible token or NFT for short. Although this one is simply a test, future iterations of this token could potentially represent title to actual real property one day. 
 
 The inspiration for this project came from Thomas’ background in real estate lending. A major part of that background was working with title companies, usually in the context of a secured transaction. That is to say financing the purchase of an asset, wherein the asset itself is collateral in the event of a default. In such cases, title agencies perform the vital work of ensuring that there is a clear chain of title. In order for there to be a clear title, all liens of record have to be cleared. This must be done by the time the new owner closes on the property and the change in ownership is recorded by the county clerk. 
 
