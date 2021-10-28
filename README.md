@@ -1,12 +1,12 @@
 # Project 3: Real Estate Ownership Token
 
+<p align="center"><img src="https://github.com/ThomasJScott3/Real-Estate-Ownership-Token/blob/main/Images/NFT.png"></img></p>
+
+
+
 Collaborators: Yonathan Eshetu, Marjorie Lawrence & Thomas Scott
 
 [Presentation Link](https://github.com/ThomasJScott3/Real-Estate-Ownership-Token/blob/main/Real%20Estate%20Token%20Presentation.pdf)
-
-
-<p align="center"><img src="https://github.com/ThomasJScott3/Real-Estate-Ownership-Token/blob/main/Images/NFT.png"></img></p>
-
 
 Summary: 
 
