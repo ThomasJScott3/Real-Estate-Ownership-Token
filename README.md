@@ -19,7 +19,7 @@ This is where our project comes in: dubbed ‘Operation Overlord’ in honor of 
 
 Prompt: 
 
-You have just been hired as a software developer at Euclid Title (which was named for the landmark case Euclid v. Ambler Realty Co.), which processes real estate transactions by ensuring that there is ‘clear title’ on properties being bought and sold. This means that there are no liens on the property and that there are no covenants, easements or other restrictions that could disrupt the orderly transfer of real property from one party to another. Your mission, should you choose to accept it, is to spearhead Project Overlord. This is one of Euclid Title’s most guarded development secrets. It involves grafting or otherwise imparting property details to NFTs (non-fungible tokens) and exchanging them through smart contracts as a precursor to replacing traditional title transactions all together. In addition, such NFTs will be transacted on a TestNet similar to that which has been demonstrated in class.
+You have just been hired as a software developer at Euclid Title (which was named for the landmark case Euclid v. Ambler Realty Co.), which processes real estate transactions by ensuring that there is ‘clear title’ on properties being bought and sold. This means that there are no liens on the property and that there are no covenants, easements or other restrictions that could disrupt the orderly transfer of real property from one party to another. Your mission, should you choose to accept it, is to spearhead Project Overlord. This is one of Euclid Title’s most guarded development secrets. It involves grafting or otherwise imparting property details to NFTs (non-fungible tokens) and exchanging them through smart contracts as a precursor to replacing traditional title transactions altogether. In addition, such NFTs will be transacted on a TestNet similar to that which has been demonstrated in class.
 
 
 ## Project Code:
@@ -103,7 +103,7 @@ Tools: Testing was conducted using the following test tools - Ganache, Remix and
 <p align="center"><img src="https://github.com/ThomasJScott3/Real-Estate-Ownership-Token/blob/main/Images/testingFunction.PNG"></img></p>
 
 
-Functions Tested: Contract status when posted on testnet sites where the following steps were taken - token ownership, approve action to transfer, and validate token transfer.   
+Functions Tested: Contract status when posted on testnet sites where the following steps were taken - token ownership, approve action to transfer and validate token transfer.   
 
 <br>
 
